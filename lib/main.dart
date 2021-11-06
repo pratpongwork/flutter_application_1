@@ -13,8 +13,12 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "My app",
-      home: MyHomePage(),
       theme: ThemeData(primarySwatch: Colors.pink),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const MyHomePage(),
+        '/pagetwo': (context) => const PageTwo(),
+      },
     );
   }
 }
@@ -59,32 +63,45 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                FloatingActionButton(
+                ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      num++;
-                    });
+                    Navigator.pushNamed(context, '/pagetwo');
                   },
-                  child: Icon(Icons.add),
-                ),
-                FloatingActionButton(
-                  onPressed: () {
-                    setState(() {
-                      num == 0;
-                    });
-                  },
-                  child: Icon(Icons.exposure_zero),
-                ),
-                FloatingActionButton(
-                  onPressed: () {
-                    setState(() {
-                      num--;
-                    });
-                  },
-                  child: Icon(Icons.delete),
-                ),
+                  child: Text("GO TO PAGE TWO"),
+                )
               ],
             ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class PageTwo extends StatefulWidget {
+  const PageTwo({Key? key}) : super(key: key);
+
+  @override
+  _PageTwoState createState() => _PageTwoState();
+}
+
+class _PageTwoState extends State<PageTwo> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Page Two"),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            Text("PAGE TWO"),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text("BACK"),
+            )
           ],
         ),
       ),
