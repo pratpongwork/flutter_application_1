@@ -18,12 +18,18 @@ class Myapp extends StatelessWidget {
           title: Text("Hello"),
         ),
         body: Center(
-          child: Text(
-            "สวัสดี",
-            style: TextStyle(
-              fontSize: 25,
-              color: Colors.blue,
-            ),
+          child: Column(
+            children: [
+              Text("สวัสดี"),
+              Text("เราชื่อ มิกส์"),
+              Text(
+                "สวัสดี",
+                style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.blue,
+                ),
+              ),
+            ],
           ),
         ),
       ),
