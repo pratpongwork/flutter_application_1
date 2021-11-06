@@ -60,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
             num++;
           });
         },
+        child: Icon(Icons.add),
       ),
     );
   }
