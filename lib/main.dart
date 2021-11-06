@@ -46,6 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
             Image(
               image: NetworkImage(
                   "https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256__340.jpg"),
+            ),
+            Image(
+              image: AssetImage("download.jpg"),
             )
           ],
         ),
