@@ -40,27 +40,53 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              "สวัสดี",
-              style: TextStyle(
-                fontSize: 25,
-                color: Colors.blue,
-              ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  "สวัสดี",
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.blue,
+                  ),
+                ),
+                Text(
+                  num.toString(),
+                  style: TextStyle(fontSize: 60),
+                )
+              ],
             ),
-            Text(
-              num.toString(),
-              style: TextStyle(fontSize: 60),
-            )
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                FloatingActionButton(
+                  onPressed: () {
+                    setState(() {
+                      num++;
+                    });
+                  },
+                  child: Icon(Icons.add),
+                ),
+                FloatingActionButton(
+                  onPressed: () {
+                    setState(() {
+                      num == 0;
+                    });
+                  },
+                  child: Icon(Icons.exposure_zero),
+                ),
+                FloatingActionButton(
+                  onPressed: () {
+                    setState(() {
+                      num--;
+                    });
+                  },
+                  child: Icon(Icons.delete),
+                ),
+              ],
+            ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            num++;
-          });
-        },
-        child: Icon(Icons.add),
       ),
     );
   }
