@@ -27,6 +27,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int num = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,6 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               "สวัสดี",
@@ -43,12 +47,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.blue,
               ),
             ),
-            Image(
-              image: NetworkImage(
-                  "https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256__340.jpg"),
-            ),
-            Image(
-              image: AssetImage("download.jpg"),
+            Text(
+              num.toString(),
+              style: TextStyle(fontSize: 60),
             )
           ],
         ),
